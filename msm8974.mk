@@ -34,14 +34,6 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    $(LOCAL_PATH)/audio/MaxxAudio/MaxxAudioFX.apk:system/priv-app/MaxxAudioFX.apk \
-    $(LOCAL_PATH)/audio/MaxxAudio/lib/libMA3-processcode-Coretex_A9.so:system/vendor/lib/libMA3-processcode-Coretex_A9.so \
-    $(LOCAL_PATH)/audio/MaxxAudio/lib/libMA3-processcode-Qualcomm.so:system/vendor/lib/libMA3-processcode-Qualcomm.so \
-    $(LOCAL_PATH)/audio/MaxxAudio/lib/soundfx/libmaxxeffect-cembedded.so:system/vendor/lib/soundfx/libmaxxeffect-cembedded.so \
-    $(LOCAL_PATH)/audio/MaxxAudio/lib/soundfx/libqcbassboost.so:system/vendor/lib/soundfx/libqcbassboost.so \
-    $(LOCAL_PATH)/audio/MaxxAudio/lib/soundfx/libqcreverb.so:system/vendor/lib/soundfx/libqcreverb.so \
-    $(LOCAL_PATH)/audio/MaxxAudio/lib/soundfx/libqcvirt.so:system/vendor/lib/soundfx/libqcvirt.so \
-    $(LOCAL_PATH)/audio/MaxxAudio/waves/default.mps:system/etc/waves/default.mps \
     $(LOCAL_PATH)/audio/acdb/MTP_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP_General_cal.acdb:system/etc/acdbdata/MTP/MTP_General_cal.acdb \
     $(LOCAL_PATH)/audio/acdb/MTP_Global_cal.acdb:system/etc/acdbdata/MTP/MTP_Global_cal.acdb \
@@ -278,6 +270,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml
+
+# Include MaxxAudio
+$(call inherit-product-if-exists, vendor/maxxaudio/vendor.mk)
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/oppo/msm8974-common/msm8974-common-vendor.mk)
