@@ -15,8 +15,5 @@
 """Custom OTA commands for msm8974-common"""
 
 def FullOTA_InstallEnd(info):
-    info.script.AppendExtra('ui_print("...Removing AudioFX...");')
     info.script.AppendExtra('run_program("/sbin/busybox", "mount", "/system");')
-    info.script.AppendExtra('delete_recursive("/system/priv-app/AudioFX");')
-    info.script.AppendExtra('delete_recursive("/system/app/AudioFX");')
     info.script.AppendExtra('unmount("/system");')
