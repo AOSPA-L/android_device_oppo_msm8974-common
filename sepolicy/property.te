@@ -1,1 +1,4 @@
 type camera_prop, property_type;
+
+# Timekeep
+type timekeep_prop, property_type;

@@ -156,6 +156,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.msm8974
 
+# Sony timekeep
+PRODUCT_PACKAGES += \
+    TimeKeep \
+    timekeep \
+
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine-8974.conf
